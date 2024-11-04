@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("assets/fonts/static/Karla-Regular.ttf");
+}
+
+body {
+  font-family: "Karla";
+  background-color: #e0f3e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 550px;
+}
+
+.form-container h2 {
+  text-align: left;
+  margin-bottom: 30px;
+  color: #3b3b3b;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-group {
+  margin-bottom: 17px;
+  flex: 1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 12px;
+  color: #3b3b3b;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+  font-family: "Karla";
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 1px solid #0c7d69;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border: 1px solid #0c7d69;
+}
+
+.form-group input:hover {
+  border: 1px solid #0c7d69;
+  cursor: pointer;
+}
+
+.form-group textarea:hover {
+  border: 1px solid #0c7d69;
+  cursor: pointer;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: none;
+}
+
+.query-box {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.query-box .option {
+  background: #fff;
+  padding: 10px 15px;
+  width: 100%;
+  display: flex;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.query-box .option .dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 10px;
+  border: 1px solid #0c7d69;
+}
+
+.query-box .option .dot::before {
+  position: absolute;
+  content: "";
+  top: 1.7px;
+  left: 1.7px;
+  width: 7.2px;
+  height: 7.2px;
+  background: #0c7d69;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.query-box input {
+  display: none;
+}
+
+#option-1:checked:checked ~ .option-1,
+#option-2:checked:checked ~ .option-2 {
+  border-color: #0c7d69;
+  background: #e0f3e5;
+}
+
+#option-1:checked:checked ~ .option-1 .dot::before,
+#option-2:checked:checked ~ .option-2 .dot::before {
+  opacity: 1;
+}
+
+.checkbox-group {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.checkbox-group input {
+  width: 15px;
+}
+.checkbox-group label {
+  display: flex;
+  margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.checkbox-group input {
+  accent-color: #0c7d69;
+}
+
+.submit-btn {
+  font-family: "Karla";
+  width: 100%;
+  padding: 12px;
+  background-color: #0c7d69;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #145a3b;
+}
+
+@media only screen and (max-width: 480px) {
+  .form-row {
+    display: inline;
+  }
+
+  .query-box {
+    display: inline;
+  }
+
+  .query-box .option-1 {
+    margin-bottom: 10px;
+  }
+
+  .form-group textarea {
+    height: 150px;
+  }
+
+  .query-box .option .dot::before {
+    top: 1.7px;
+    left: 1.7px;
+  }
+}
